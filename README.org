@@ -1,5 +1,7 @@
 Query bugzilla from lisp.
 
+This code is aimed at the basic query of bugzilla.  I dont know if its suitable for your needs.
+It has been developed against the Red Hat bugzilla instance version 5.0.4.rh86.
 
 ** Authentication:
 
@@ -28,5 +30,6 @@ Update a existing bugs specific field:
 Get a list of comments for a bug:
     (bugzilla:get-comments "2210552")
 
+The bug numbers are strings, but I think i'll change this to non strings.
 
-  
+If there is a string provided, that might end up be the alias being queried, Still undecided.
