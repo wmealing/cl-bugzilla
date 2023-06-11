@@ -41,14 +41,13 @@ Example:
     (print d)
     (with-input-from-string (s (dex:request url :method method :content d :headers h))
       (cl-json:decode-json s))))
-
 (defun version ( &key params data)
   (request :GET "version"))
 
 (defun get-bug ( bug &key params data)
   (let* ((p (and params (str:concat "?" (quri:url-encode-params params))))
          (d (and data (encode-json data)))
-         (url (str:concat "/bug/" bug p)))
+         (url (str:concat "bug/" (write-to-string bug) p)))
     (request :GET url)))
 
 (defun get-bugs (bug-list &key params)
@@ -63,7 +62,7 @@ Example:
     (bugzilla:update-bug \"2210552\" :data '((\"summary\" . \"Test Please ignore\")))
   Possible fields to update shown in the docs, see:
      https://bugzilla.redhat.com/docs/en/html/api/core/v1/bug.html#update-bug"
-  (let* ((url (str:concat "bug/" bug-id ))
+  (let* ((url (str:concat "bug/" (write-to-string bug-id)))
          (d (encode-json-to-string data)))
     (request :PUT url :data data)))
 
@@ -75,5 +74,4 @@ Example:
     https://bugzilla.redhat.com/docs/en/html/api/core/v1/comment.html"
 
   (request :GET
-           (str:concat "/bug/" bug-id "/comment" )))
-
+           (str:concat "/bug/" (write-to-string bug-id) "/comment" )))
