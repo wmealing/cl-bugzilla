@@ -11,7 +11,9 @@ Otherwise, you will need to manually set the *api-token*.
 
 Create a bugzilla api-token.
 
+```
 (defparameter bugzilla:*api-token* "secret")
+```
 
 I reccomend you source this from the environment variable so that its not stored directly with your code
 or use your cloudprovider secrets API to access/set it.
@@ -19,16 +21,24 @@ or use your cloudprovider secrets API to access/set it.
 ** Basic API
 
 Gets a specific bug:
-  (bugzilla:get-bug 1234)
+```
+   (bugzilla:get-bug 1234)
+```
 
 Get a list of bugs:
-  (bugzilla:get-bugs '(1234 4567 7890))
+```
+   (bugzilla:get-bugs '(1234 4567 7890))
+```
 
 Update a existing bugs specific field:
+```
    (bugzilla:update-bug 2210552 :data '(("summary" . "Test Please ignore")))
+```
 
 Get a list of comments for a bug:
-    (bugzilla:get-comments 2210552)
+```
+   (bugzilla:get-comments 2210552)
+```
 
 TODO:
    - Determine how to lookup bug by alias.
