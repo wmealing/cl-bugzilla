@@ -44,7 +44,7 @@ Update a existing bugs specific field:
 Get a list of comments for a bug:
 
 #+begin_src LISP
-     (bugzilla:get-comments 2210552)xs
+     (bugzilla:get-comments 2210552)
 #+end_src
 
 
