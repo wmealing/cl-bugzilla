@@ -19,17 +19,16 @@ or use your cloudprovider secrets API to access/set it.
 ** Basic API
 
 Gets a specific bug:
-  (bugzilla:get-bug "1234")
+  (bugzilla:get-bug 1234)
 
 Get a list of bugs:
-  (bugzilla:get-bugs '("1234" "4567" "7890"))
+  (bugzilla:get-bugs '(1234 4567 7890))
 
 Update a existing bugs specific field:
-   (bugzilla:update-bug "2210552" :data '(("summary" . "Test Please ignore")))
+   (bugzilla:update-bug 2210552 :data '(("summary" . "Test Please ignore")))
 
 Get a list of comments for a bug:
-    (bugzilla:get-comments "2210552")
+    (bugzilla:get-comments 2210552)
 
-The bug numbers are strings, but I think i'll change this to non strings.
-
-If there is a string provided, that might end up be the alias being queried, Still undecided.
+TODO:
+   - Determine how to lookup bug by alias.
