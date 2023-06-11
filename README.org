@@ -37,19 +37,16 @@ Get a list of bugs:
 
 Update a existing bugs specific field:
 
-```
-
+#+begin_src LISP
    (bugzilla:update-bug 2210552 :data '(("summary" . "Test Please ignore")))
-
-```
+#+end_src
 
 Get a list of comments for a bug:
 
-```
+#+begin_src LISP
+     (bugzilla:get-comments 2210552)xs
+#+end_src
 
-   (bugzilla:get-comments 2210552)
-
-```
 
 TODO:
    - Determine how to lookup bug by alias.
