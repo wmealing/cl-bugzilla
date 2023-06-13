@@ -3,6 +3,7 @@
 (defpackage #:bugzilla
   (:use #:cl
         #:cl-json)
+  (:nicknames :bz)
   (:export
    :request
    :get-bug
