@@ -32,7 +32,6 @@ Get a list of bugs:
    (bugzilla:get-bugs '(1234 4567 7890))
 #+end_src
 
-
 Update a existing bugs specific field:
 
 #+begin_src LISP
@@ -46,5 +45,9 @@ Get a list of comments for a bug:
 #+end_src
 
 
+Bugzilla also has the option for extra fields, which I have not tested yet.
+
+
 TODO:
    - Determine how to lookup bug by alias.
+   - Find out how to deal with 'extra' fields which are visible to specific users.
